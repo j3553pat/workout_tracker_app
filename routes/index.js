@@ -1,13 +1,13 @@
 const router = require("express").Router();
 
-const employeesRouter = require("./employees");
-const departmentsRouter = require("./departments");
-const salariesRouter = require("./salaries");
-const titlesRouter = require("./titles");
+const caloriesRouter = require("./calories");
+const exercisesRouter = require("./exercises");
+const foodIntakeRouter = require("./foodIntake");
+const usersRouter = require("./users");
 
-router.use("/employees", employeesRouter);
-router.use("/departments", departmentsRouter);
-router.use("/salaries", salariesRouter);
-router.use("/titles", titlesRouter);
+router.use("/calories", caloriesRouter);
+router.use("/exercises", exercisesRouter);
+router.use("/foodIntake", foodIntakeRouter);
+router.use("/users", usersRouter);
 
 module.exports = router;

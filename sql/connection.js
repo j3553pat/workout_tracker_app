@@ -9,8 +9,8 @@ class Connection {
         connectionLimit: 100,
         host: process.env.HOST,
         user: process.env.DB_USER,
-        password: process.env.PW,
-        database: process.env.DB,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_DEFAULT_SCHEMA,
       });
 
       return this.pool;
