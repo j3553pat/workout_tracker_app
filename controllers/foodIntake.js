@@ -47,7 +47,7 @@ const deleteFoodIntakeEntry = (req, res) => {
 
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err);
-    return res.json({ message: `Deleted ${results.affectedRows} user(s)` });
+    return res.json({ message: `Deleted ${results.affectedRows} entry` });
   });
 }
 

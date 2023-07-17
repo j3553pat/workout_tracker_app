@@ -10,6 +10,6 @@ router.post("/", caloriesController.createCalorieEntry);
 
 router.put("/:id", caloriesController.updateCalorieEntry);
 
-router.put("/:calorie_tdee_entry", caloriesController.deleteCalorieEntry)
+router.delete("/:calorie_tdee_entry", caloriesController.deleteCalorieEntry)
 
 module.exports = router;

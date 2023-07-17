@@ -1,15 +1,15 @@
 const express = require('express')
-const caloriesController = require('../controllers/exercises')
+const exerciseController = require('../controllers/exercises')
 const router = express.Router();
 
-router.get("/", caloriesController.trackCalories);
+router.get("/list", exerciseController.trackExercises);
 
-router.get("/:id", caloriesController.getcaloriesByUserId);
+router.get("/:id", exerciseController.getExercisesById);
 
-router.post("/", caloriesController.createCalorieEntry);
+router.post("/", exerciseController.addExercise);
 
-router.put("/:id", caloriesController.updateCalorieEntry);
+router.delete("/:id", exerciseController.deleteExercise);
 
-router.put("/:calorie_tdee_entry", caloriesController, caloriesController.deleteCalorieEntry)
+router.put("/:exercise_entry", exerciseController.updateExerciseEntry)
 
 module.exports = router;

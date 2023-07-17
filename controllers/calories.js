@@ -33,7 +33,11 @@ const createCalorieEntry = (req, res) => {
 const updateCalorieEntry = (req, res) => {
   let sql =
     "UPDATE calories SET `calorie_tdee_entry` = ?, `calories_burned_entry` = ?, `calories_gained_entry` = ?, `net_calorie_entry` = ? WHERE id = ? ";
-  sql = mysql.format(sql, [calorie_tdee_entry, calories_burned_entry, calories_gained_entry, net_calorie_entry]);
+  sql = mysql.format(sql, [
+    req.body.calorie_tdee_entry,
+    req.body.calories_burned_entry,
+    req.body.calories_gained_entry,
+    req.body.net_calorie_entry]);
 
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err);
