@@ -2,7 +2,7 @@ const axios = require('axios')
 const mysql = require('mysql2')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const pool = require('../sql/connection')
+const pool = require('../sql/connections')
 const { handleSQLError } = require('../sql/error')
 
 const saltRounds = 10
