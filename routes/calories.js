@@ -2,7 +2,7 @@ const express = require('express')
 const caloriesController = require('../controllers/calories')
 const router = express.Router();
 
-router.get("/", caloriesController.trackCalories);
+router.get("/trackingCalories", caloriesController.trackCalories);
 
 router.get("/:id", caloriesController.getcaloriesByUserId);
 

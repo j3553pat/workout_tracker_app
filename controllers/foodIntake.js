@@ -1,4 +1,4 @@
-const mysql2 = require("mysql2");
+const mysql = require("mysql2");
 const pool = require("../sql/connections");
 const { handleSQLError } = require("../sql/error");
 
@@ -20,9 +20,9 @@ const getfoodIntakeById = (req, res) => {
 };
 
 const createfoodIntakeEntry = (req, res) => {
-  let sql = "INSERT INTO food_intake (`food_entry`, `date_entry` VALUES (?,?)";
-
-  sql = mysql.format(sql, [req.body.food_entry, req.body.date_entry]);
+  let sql = "INSERT INTO food_intake (`food_entry`, `date_entry`) VALUES (?,?)";
+   const date = new Date()
+  sql = mysql.format(sql, [req.body.food_entry, date]);
 
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err);

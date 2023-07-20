@@ -1,4 +1,4 @@
-const mysql2 = require("mysql2");
+const mysql = require("mysql2");
 const pool = require("../sql/connections");
 const { handleSQLError } = require("../sql/error");
 
