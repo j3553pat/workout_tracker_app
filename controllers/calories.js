@@ -46,8 +46,8 @@ const updateCalorieEntry = (req, res) => {
 };
 
 const deleteCalorieEntry = (req, res) => {
-  let sql = "DELETE FROM calories WHERE calorie_tdee_entry = ?"
-  sql = mysql.format(sql, [req.params.calorie_tdee_entry]);
+  let sql = "DELETE FROM calories WHERE id = ?"
+  sql = mysql.format(sql, [req.params.id]);
 
   pool.query(sql, (err, results) => {
     if (err) return handleSQLError(res, err);
