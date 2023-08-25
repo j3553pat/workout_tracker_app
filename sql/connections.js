@@ -1,13 +1,15 @@
 const mysql = require("mysql2");
+
 require("dotenv").config();
 
 class Connection {
   constructor() {
     if (!this.pool) {
       console.log("creating connection...");
+      fs.writeFileSync()
       this.pool = mysql.createPool({
         connectionLimit: 100,
-        host: process.env.HOST,
+        host: process.env.DB_HOST,
         user: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
         database: process.env.DB_DEFAULT_SCHEMA,
