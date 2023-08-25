@@ -11,6 +11,6 @@ app.use(express.json());
 app.use(routes);
 
 
-app.get("/", (req, res) => res.send("Welcome to your personal workout tracker!"));
+app.get("/abc", (req, res) => res.send("Welcome to your personal workout tracker!"));
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
